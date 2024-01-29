@@ -25,8 +25,14 @@
             <% items.forEach((item) => { %>
                 <li>
                     <div class="item-data">
-                    <span class="id-column"><%= item.id %></span>
-                    <span class="name-column"><%= item.name %></span>
+                        <span class="id-column"><%= item.id %></span>
+                        <span class="name-column"><%= item.name %></span>
+                    </div>
+                    <div class="item-menu">
+                        <a href="/edit/<%= item.id %>">Edit</a>
+                        <form action="/delete/<%= item.id %>" method="post">
+                            <input type="submit" value="Hapus">
+                        </form>
                     </div>
                   </li>
             <% }); %>
